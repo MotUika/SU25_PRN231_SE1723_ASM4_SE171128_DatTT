@@ -1,0 +1,6 @@
+@MyDNA.SoapAPIServices.DatTT_HostAddress = http://localhost:5014
+
+GET {{MyDNA.SoapAPIServices.DatTT_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
