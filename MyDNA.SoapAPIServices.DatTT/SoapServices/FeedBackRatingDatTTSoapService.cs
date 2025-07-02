@@ -37,10 +37,10 @@ namespace MyDNA.SoapAPIServices.DatTT.SoapServices
                 var opt = new JsonSerializerOptions() { ReferenceHandler = ReferenceHandler.IgnoreCycles, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
 
 
-                var cashDepositSlipJsonString = JsonSerializer.Serialize(feedBackRatingDatTTs, opt);
+                var feedBackRatingJsonString = JsonSerializer.Serialize(feedBackRatingDatTTs, opt);
 
 
-                var result = JsonSerializer.Deserialize<List<FeedBackRatingDatTT>>(cashDepositSlipJsonString, opt);
+                var result = JsonSerializer.Deserialize<List<FeedBackRatingDatTT>>(feedBackRatingJsonString, opt);
 
                 return result;
             }
@@ -61,10 +61,10 @@ namespace MyDNA.SoapAPIServices.DatTT.SoapServices
                 var opt = new JsonSerializerOptions() { ReferenceHandler = ReferenceHandler.IgnoreCycles, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
 
 
-                var cashDepositSlipJsonString = JsonSerializer.Serialize(feedBackRatingDatTTs, opt);
+                var feedBackRatingJsonString = JsonSerializer.Serialize(feedBackRatingDatTTs, opt);
 
 
-                var result = JsonSerializer.Deserialize<FeedBackRatingDatTT>(cashDepositSlipJsonString, opt);
+                var result = JsonSerializer.Deserialize<FeedBackRatingDatTT>(feedBackRatingJsonString, opt);
 
                 return result;
             }
@@ -74,20 +74,66 @@ namespace MyDNA.SoapAPIServices.DatTT.SoapServices
 
             //throw new NotImplementedException();
         }
-
-        public Task<int> DeleteFeedBackRatingDatTTAsync(int id)
+        public async Task<int> CreateFeedBackRatingDatTTAsync(FeedBackRatingDatTT feedBackRatingDatTT)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+                var opt = new JsonSerializerOptions() { ReferenceHandler = ReferenceHandler.IgnoreCycles, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+
+
+                var feedBackRatingJsonString = JsonSerializer.Serialize(feedBackRatingDatTT, opt);
+
+
+                var feedBackRatingDatTTs = JsonSerializer.Deserialize<MyDNA.Repositories.DatTT.Models.FeedBackRatingDatTT>(feedBackRatingJsonString, opt);
+
+                var result = await _serviceProviders.FeedBackRatingDatTTService.CreateAsync(feedBackRatingDatTTs);
+
+                return result;
+            }
+            catch (Exception ex) { }
+
+            return 0;
+
+            //throw new NotImplementedException();
         }
-
-        public Task<int> UpdateFeedBackRatingDatTTAsync(FeedBackRatingDatTT feedBackRating)
+        public async Task<int> UpdateFeedBackRatingDatTTAsync(FeedBackRatingDatTT feedBackRatingDatTT)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+                var opt = new JsonSerializerOptions() { ReferenceHandler = ReferenceHandler.IgnoreCycles, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+
+
+                var feedBackRatingJsonString = JsonSerializer.Serialize(feedBackRatingDatTT, opt);
+
+
+                var feedBackRatingDatTTs = JsonSerializer.Deserialize<MyDNA.Repositories.DatTT.Models.FeedBackRatingDatTT>(feedBackRatingJsonString, opt);
+
+                var result = await _serviceProviders.FeedBackRatingDatTTService.UpdateAsync
+                    (feedBackRatingDatTTs);
+
+                return result;
+            }
+            catch (Exception ex) { }
+
+            return 0;
+
+            //throw new NotImplementedException();
         }
-
-        public Task<int> CreateFeedBackRatingDatTTAsync(FeedBackRatingDatTT feedBackRating)
+        public async Task<int> DeleteFeedBackRatingDatTTAsync(int feedBackRatingDatTT)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _serviceProviders.FeedBackRatingDatTTService.DeleteAsync(feedBackRatingDatTT);
+
+                return result ? 1 : 0;
+            }
+            catch (Exception ex) { }
+
+            return 0;
+
+            //throw new NotImplementedException();
         }
     }
 }
