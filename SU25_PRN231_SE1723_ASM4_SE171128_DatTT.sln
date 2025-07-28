@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDNA.SoapAPIServices.DatTT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDNA.Services.DatTT", "MyDNA.Services.DatTT\MyDNA.Services.DatTT.csproj", "{509FF5EB-7C8C-F0BF-0FD7-B3FE0CC27312}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDNA.SoapClients.ConsoleApp.DatTT", "MyDNA.SoapClients.ConsoleApp.DatTT\MyDNA.SoapClients.ConsoleApp.DatTT.csproj", "{82B3D84E-9844-42C5-806B-E2260B7FF421}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{509FF5EB-7C8C-F0BF-0FD7-B3FE0CC27312}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{509FF5EB-7C8C-F0BF-0FD7-B3FE0CC27312}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{509FF5EB-7C8C-F0BF-0FD7-B3FE0CC27312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82B3D84E-9844-42C5-806B-E2260B7FF421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82B3D84E-9844-42C5-806B-E2260B7FF421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82B3D84E-9844-42C5-806B-E2260B7FF421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82B3D84E-9844-42C5-806B-E2260B7FF421}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

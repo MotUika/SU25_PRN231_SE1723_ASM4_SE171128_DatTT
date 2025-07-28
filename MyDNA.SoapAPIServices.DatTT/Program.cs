@@ -22,7 +22,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseSoapEndpoint<IFeedBackRatingDatTTSoapService>("/IFeedBackRatingDatTTSoapService.asmx", new SoapEncoderOptions());
+app.UseSoapEndpoint<IFeedBackRatingDatTTSoapService>("/FeedBackRatingDatTTSoapService.asmx", new SoapEncoderOptions());
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

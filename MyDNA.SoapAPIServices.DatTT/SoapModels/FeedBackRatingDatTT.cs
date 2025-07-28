@@ -23,12 +23,10 @@ public partial class FeedBackRatingDatTT
     [DataMember]
 
     [Required(ErrorMessage = "Writer Name is required.")]
-    [RegularExpression("^\\s*[A-Z][a-zA-Z ]{1,49}\\s*$", ErrorMessage = "Writer Name must be a valid name.")]
     public string WriterName { get; set; }
     [DataMember]
 
     [Required(ErrorMessage = "Title is required.")]
-    [RegularExpression("^\\s*[A-Z][a-zA-Z ]{1,49}\\s*$", ErrorMessage = "Title must be a valid.")]
     public string Title { get; set; }
     [DataMember]
 
